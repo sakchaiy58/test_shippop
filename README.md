@@ -3,7 +3,7 @@
 # programmer_test1
 FILE :
 ```html
-Download [index](Programmer_test1/index.php). AND [function](Programmer_test1/function.php)
+Download [index](Programmer_test1/index.php)
 ```
 
 
