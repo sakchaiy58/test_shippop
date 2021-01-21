@@ -1,6 +1,6 @@
 [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](http://mit-license.org)
 
-## programmer_test1
+# programmer_test1
 โหลดตัวช่ายต่างๆ :
 ```html
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -12,7 +12,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 ```
 
-CSS :
+### CSS :
 ```css
   *{
      font-size: 16px;
@@ -160,27 +160,6 @@ Java Script :
             }
         }
 
-```
-
-
-PHP IF ELSE FUNCTION SEARCH SELECT :
-```PHP
-<?php
-if($_GET['type_search']){
-    
-    if($_GET['type_search'] == 'Linear'){
-        Linear_search($_POST['search_list_number'], $_POST['search_number']);
-    }
-
-    if($_GET['type_search'] == 'Binary'){
-        Binary_search($_POST['search_list_number'], $_POST['search_number']);
-    }
-
-    if($_GET['type_search'] == 'Bubble'){
-        Bubble_sort($_POST['search_list_number']);
-    }
-}
-?>
 ```
 
 PHP Function Linear Search :
