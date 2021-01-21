@@ -1,821 +1,283 @@
-# test_shippop
-
-# ADVHelper
-
-[![Version](https://img.shields.io/cocoapods/v/ADVHelper.svg?style=flat)](http://cocoapods.org/pods/ADVHelper)
 [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](http://mit-license.org)
-[![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat)](https://developer.apple.com/iphone/index.action)
-[![Language](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://developer.apple.com/swift)
 
-* [Requirements](#Requirements)
-* [Installation](#Installation)
-* [Usage](#Usage)
-  * [ADVHelper](#--ADVHelper)
-  * [Localize](#--Localize)
-  * [String Extension](#--String-Extension)
-  * [Label](#--Label)
-  * [TextField](#--TextField)
-  * [TextView](#--TextView)
-  * [ImageView](#--ImageView)
-  * [View](#--View)
-  * [TableView](#--TableView)
-  * [CollectionView](#--CollectionView)
-* [Example](#Example)
-* [Author](#Author)
-* [License](#License)
-* [Credits](#Credits)
-
-## Requirements
-
-iOS 12.0 or above
-
-## Installation
-
-ADVHelper is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod 'ADVHelper'
+## programmer_test1
+โหลดตัวช่ายต่างๆ :
+```html
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<!--  icon-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- sweet alert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 ```
 
-## Usage
-
-### - ADVHelper
-
-#### Using ADVHelper programmatically
-
-Import ADVHelper at the top of each Swift file that will be used.
-
-```swift
-import ADVHelper
+CSS :
+```css
+  *{
+     font-size: 16px;
+     font-family: Cloud;
+   }
+   .top_row{
+      margin-top: 15px
+  }
+  .result_search{
+     padding: 10px; 
+     border: 1px solid black; 
+     height: 500px; 
+     text-align: center;
+     font-size:18px;
+  }
+  .overflow_result{
+     overflow: auto; 
+     height: 380px; 
+     margin-top: 10px;
+  }
 ```
 
-### - Localize
-
-#### Using Localize programmatically
-
-Add `.localized()` following any `String` object you want translated:
-```swift
-let _ = "String".localized()
+html in body :
+```html
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3" >
+                
+                </div>
+                <div class="col-sm-6" style="padding: 50px; border: 1px solid black">
+                    <div class="row">
+                        <div class="col-sm-2" >
+                            <label style="float:right">List</label>
+                        </div>
+                        <div class="col-sm-9" >
+                            <input type="text" class="form-control" id="search_list_number">
+                        </div>
+                    </div>
+                    <div class="row top_row">
+                        <div class="col-sm-2" >
+                            <label style="float:right">ค้นหา</label>
+                        </div>
+                        <div class="col-sm-5" >
+                            <input type="text" class="form-control" id="search_number">
+                        </div>
+                        <div class="col-sm-3" >
+                            <button class="btn btn-warning" onclick="search()">
+                            <i class="fa fa-search" aria-hidden="true"></i> ค้นหา 
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row top_row" >
+                        <div class="col-sm-12" >
+                            <h3 class="text-center">ประเภทการค้นหา</h3>
+                        </div>
+                        <div class="col-sm-2" >
+                            
+                        </div>
+                        <div class="col-sm-7" >
+                            <select class="form-control"
+                                    id="type_search">
+                                    <option value="Linear">Linear Search</option>
+                                    <option value="Binary">Binary Search</option>
+                                    <option value="Bubble">Bubble Sort</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3" >
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2" >
+                            
+                        </div>
+                        <div class="col-sm-10" >
+                            <span class="text-danger">***จากการศึกษาไม่รู้จัก Bubble Search เลยทำ Bubble Sort แทน</span>
+                        </div>
+                    </div>
+                    <div class="row top_row" >
+                        <div class="col-sm-1" >
+                            
+                        </div>
+                        <div class="col-sm-11">
+                            <h2 style="margin-left: -15px">ผลลัพธ์</h2>
+                        </div>
+                        <div class="col-sm-1" >
+                            
+                        </div>
+                        <div class="col-sm-10  result_search">
+                            <lable id="show_list_number"></lable><br>
+                            <lable id="show_number"></lable><br>
+                            <div class="overflow_result">
+                                <strong id="show_result" ><br></strong>
+                            <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 ```
 
-To change the current language:
-```swift
-Localize.setCurrentLanguage("th")
+Java Script :
+```js
+  $(document).ready(function(){    
+            $('#search_number').on('input', function (event) {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+
+            $('#search_list_number').on('input', function (event) {
+                this.value = this.value.replace(/[^0-9,]/g, '');
+            });
+        });
+
+
+        function search(){
+            var type_search = $('#type_search').val();
+            var search_list_number = $('#search_list_number').val();
+            var search_number = $('#search_number').val();
+
+            if(search_list_number == '' || search_number == ''){
+                Swal.fire('กรุณากรอก List และ เลขค้นหา', '', 'error').then(function (result) {
+                    if (result.value) {
+                        return false;
+                    } 
+                });
+            }else{
+                $('#show_list_number').text('List : [ '+search_list_number+' ]');
+                $('#show_number').text('Search : '+search_number);
+                $.ajax({
+                    type: "POST",
+                    url: 'function.php?type_search='+type_search,
+                    data: {
+                        search_list_number : search_list_number,
+                        search_number : search_number
+                    },
+                    success: function(res){
+                        var data = JSON.parse(res);
+                        if(data.error = "0"){
+                            $('#show_result').html(data.result);
+                        }else{
+
+                        }
+                    }
+                });
+            }
+        }
+
 ```
 
-To update the UI in the view controller where a language change can take place, observe LCLLanguageChangeNotification:
-```swift
-NotificationCenter.default.addObserver(self, selector: #selector(setText), name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
-```
 
-Example function `setText()`
-
-```swift
-@objc func setText() {
-    titleLabel.localizeKey = "String".localized()
-    textFieldBox.localizeKey = "String".localized()
-    textViewBox.localizeKey = "String".localized()
-    buttonBtn.localizeKey = "String".localized()
-}
-```
-
-### - String Extension
-
-#### Using String Extension programmatically
-
-###### - DateFormatter
-
-- Function `dateFormat` for set output `format`
-  
-In this function, it supports the input formats `yyyy-MM-dd HH: mm: ss` and `yyyy-MM-dd`. And default local date for input `en`. And local date for output are based on `Localize Language`.
-  
-Example input date
-```swift
-let inputDateStr = "2020-06-17 10:20:30"
-```
-  
-Example of use
-```swift
-titleLabel.text = inputDateStr.dateFormat(format: "dd/MM/yyyy HH:mm")
-```
-  
-Output
-```
-17/06/2020 10:20
-```
-  
-- Function `dateFormat` for set `fromFormat` and `toFormat`
-  
-In this function, it default local date for input `en`. And local date for output are based on `Localize Language`.
-  
-Example input date
-```swift
-let inputDateStr = "2020-06-17 10:20:30"
-```
-  
-Example of use
-```swift
-titleLabel.text = inputDateStr.dateFormat(fromFormat: "yyyy-MM-dd HH:mm:ss", toFormat: "dd/MM/yyyy HH:mm")
-```
-  
-Output
-```
-17/06/2020 10:20
-```
-
-- Function `dateFormat` for set `fromFormat` `toFormat` and `toLocaleIdentifier`
-  
-In this function, it default local date for input `en`.
-  
-Example input date
-```swift
-let inputDateStr = "2020-06-17 10:20:30"
-```
-  
-Example of use
-```swift
-titleLabel.text = inputDateStr.dateFormat(fromFormat: "yyyy-MM-dd HH:mm:ss", toFormat: "dd/MM/yyyy HH:mm", toLocaleIdentifier: "th")
-```
-  
-Output
-```
-17/06/2563 10:20
-```
-
-- Function `dateFormat` for all set `fromFormat` `fromLocaleIdentifier` `toFormat` and `toLocaleIdentifier`
-  
-Example input date
-```swift
-let inputDateStr = "2563-06-17 10:20:30"
-```
-  
-Example of use
-```swift
-titleLabel.text = inputDateStr.dateFormat(fromFormat: "yyyy-MM-dd HH:mm:ss", fromLocaleIdentifier: "th", toFormat: "dd/MM/yyyy HH:mm", toLocaleIdentifier: "en")
-```
-  
-Output
-```
-17/06/2020 10:20
-```
-
-### - Button
-
-#### Using Button programmatically
-
-Connect the UI to Code
-```swift
-@IBOutlet weak var buttonBtn: Button!
-```
-
-###### - Localize
-
-Define text with `localizeKey`
-```swift
-buttonBtn.localizeKey = "Button".localized()
-```
-
-###### - Loading
-
-![Loading_Btn](Screenshot/Loading_Btn.gif)
-
-To show a loader inside the button, and enable or disable user interection while loading
-
-```swift
-buttonBtn.showLoader()
-```
-
-To hide a loader
-
-```swift
-buttonBtn.hideLoader()
-```
-
-#### Using Button in Storyboard
-
-The steps for use
-1. Drag a UIButton into Storyboard.
-2. Set class to `Button`
-3. Set up attributes inspection.
-
-###### - Border
-
-<img src="Screenshot/Border_Btn.png" alt="" width="200"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-borderColor | UIColor  | The color of the layer’s border.  | UIColor.clear 
-borderWidth | CGFloat  | The width of the layer’s border.  | 0 
-
-###### - Corner Radius
-
-<img src="Screenshot/CornerRadius_btn.png" alt="" width="200"/> <img src="Screenshot/CornerRadiusFull_btn.png" alt="" width="200"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-cornerRadius | CGFloat  | The radius to use when drawing rounded corners for the layer’s background.  | 0 
-
-###### - Shadow
-
-<img src="Screenshot/Shadow_Btn.png" alt="" width="200"/> <img src="Screenshot/Shadow2_Btn.png" alt="" width="200"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-shadowColor | UIColor  | The color of the layer’s shadow. | UIColor.clear 
-shadowOpacity | Float  | The opacity of the layer’s shadow. | 0 
-shadowOffset | CGSize  | The offset (in points) of the layer’s shadow. | CGSize.zero 
-shadowRadius | CGFloat  | The blur radius (in points) used to render the layer’s shadow. | 0 
-
-###### - Gradient Background
-
-<img src="Screenshot/GradientBackground_Btn.png" alt="" width="200"/> <img src="Screenshot/GradientBackground2_Btn.png" alt="" width="200"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-gradientEnabled | Bool  | Enable gradient background.  | false 
-gradientStartColor | UIColor  | Start color gradient background.  | UIColor.clear 
-gradientEndColor | UIColor  | End color gradient background.  | UIColor.clear 
-gradientHorizontal | Bool  | Is the horizontal gradient background.  | false 
-
-###### - Click Animate
-
-<img src="Screenshot/ClickAnimate_Btn.gif" alt="" width="200"/> <img src="Screenshot/ClickAnimate2_Btn.gif" alt="" width="200"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-animatedScaleWhenHighlighted | CGFloat  | Animation scale when highlighted.  | 1.0 
-animatedScaleDurationWhenHighlighted | Double  | Animation scale duration when highlighted.  | 0.2 
-
-###### - Ripple
-
-<img src="Screenshot/Ripple1_Btn.gif" alt="" width="200"/> <img src="Screenshot/Ripple2_Btn.gif" alt="" width="200"/> <img src="Screenshot/Ripple3_Btn.gif" alt="" width="200"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-ripple | Bool  | Enable ripple animation.  | false 
-rippleColor | UIColor  | The color of the ripple animation.  | UIColor(white: 1.0, alpha: 0.3) 
-rippleSpeed | Double  | The speed of the ripple animation.  | 1.0 
-
-###### - Image
-
-<img src="Screenshot/Image25_Btn.png" alt="" width="200"/> <img src="Screenshot/Image50_Btn.png" alt="" width="200"/> <img src="Screenshot/Image75_Btn.png" alt="" width="200"/> <img src="Screenshot/Image100_Btn.png" alt="" width="200"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-imageViewContentMode | Int  | Options to specify how a view adjusts its content when its size changes. * [ContentMode](https://developer.apple.com/documentation/uikit/uiview/contentmode) | 0 
-imageAlpha | CGFloat  | The image view's alpha value. | 1.0 
-
-###### - Underline
-
-<img src="Screenshot/Underline_Btn.png" alt="" width="200"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-isUnderline | Bool  | Enable underline.  | false 
-
-### - Label
-
-#### Using Label programmatically
-
-Connect the UI to Code
-```swift
-@IBOutlet weak var titleLabel: Label!
-```
-
-###### - Localize
-
-Define text with `localizeKey`
-```swift
-titleLabel.localizeKey = "Label".localized()
-```
-
-#### Using Label in Storyboard
-
-The steps for use
-1. Drag a UILabel into Storyboard.
-2. Set class to `Label`
-3. Set up attributes inspection.
-
-###### - Border
-
-<img src="Screenshot/Border_Label.png" alt="" width="200"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-borderColor | UIColor  | The color of the layer’s border.  | UIColor.clear 
-borderWidth | CGFloat  | The width of the layer’s border.  | 0 
-
-###### - Corner Radius
-
-<img src="Screenshot/CornerRadius_Label.png" alt="" width="200"/> <img src="Screenshot/CornerRadiusFull_Label.png" alt="" width="200"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-cornerRadius | CGFloat  | The radius to use when drawing rounded corners for the layer’s background.  | 0 
-
-###### - Shadow
-
-<img src="Screenshot/Shadow_Label.png" alt="" width="200"/> <img src="Screenshot/Shadow2_Label.png" alt="" width="200"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-shadowColor | UIColor  | The color of the layer’s shadow. | UIColor.clear 
-shadowOpacity | Float  | The opacity of the layer’s shadow. | 0 
-shadowOffset | CGSize  | The offset (in points) of the layer’s shadow. | CGSize.zero 
-shadowRadius | CGFloat  | The blur radius (in points) used to render the layer’s shadow. | 0 
-
-###### - Underline
-
-<img src="Screenshot/Underline_Label.png" alt="" width="200"/> <img src="Screenshot/Underline2_Label.png" alt="" width="200"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-isUnderline | Bool  | Enable underline.  | false 
-
-### - TextField
-
-#### Using TextField programmatically
-
-Connect the UI to Code
-```swift
-@IBOutlet weak var textFieldBox: TextField!
-```
-
-###### - Localize
-
-Define placeholder with `localizeKey`
-```swift
-textFieldBox.localizeKey = "Placeholder".localized()
-```
-
-#### Using TextField in Storyboard
-
-The steps for use
-1. Drag a UITextField into Storyboard.
-2. Set class to `TextField`
-3. Set up attributes inspection.
-
-###### - Border
-
-<img src="Screenshot/Border_TextField.png" alt="" width="200"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-borderColor | UIColor  | The color of the layer’s border.  | UIColor.clear 
-borderWidth | CGFloat  | The width of the layer’s border.  | 0 
-
-###### - Corner Radius
-
-<img src="Screenshot/CornerRadius_TextField.png" alt="" width="200"/> <img src="Screenshot/CornerRadiusFull_TextField.png" alt="" width="200"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-cornerRadius | CGFloat  | The radius to use when drawing rounded corners for the layer’s background.  | 0 
-
-###### - Shadow
-
-<img src="Screenshot/Shadow_TextField.png" alt="" width="200"/> <img src="Screenshot/Shadow2_TextField.png" alt="" width="200"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-shadowColor | UIColor  | The color of the layer’s shadow. | UIColor.clear 
-shadowOpacity | Float  | The opacity of the layer’s shadow. | 0 
-shadowOffset | CGSize  | The offset (in points) of the layer’s shadow. | CGSize.zero 
-shadowRadius | CGFloat  | The blur radius (in points) used to render the layer’s shadow. | 0 
-
-###### - Gradient Background
-
-<img src="Screenshot/GradientBackground_TextField.png" alt="" width="200"/> <img src="Screenshot/GradientBackground2_TextField.png" alt="" width="200"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-gradientEnabled | Bool  | Enable gradient background.  | false 
-gradientStartColor | UIColor  | Start color gradient background.  | UIColor.clear 
-gradientEndColor | UIColor  | End color gradient background.  | UIColor.clear 
-gradientHorizontal | Bool  | Is the horizontal gradient background.  | false 
-
-###### - Padding
-
-Left: 0, Right: 0  | Left: 8, Right: 0 | Left: 0, Right: 8 | Left: 8, Right: 8
------------- | ------------- | ------------- | ------------- 
-<img src="Screenshot/PaddingNo_TextField.png" alt="" width="200"/> | <img src="Screenshot/PaddingL_TextField.png" alt="" width="200"/> | <img src="Screenshot/PaddingR_TextField.png" alt="" width="200"/> | <img src="Screenshot/PaddingLR_TextField.png" alt="" width="200"/> 
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-paddingLeftCustom | CGFloat  | Pads the view along left edges by the specified amount. | 8 
-paddingRightCustom | CGFloat  | Pads the view along right edges by the specified amount. | 8 
-
-### - TextView
-
-#### Using TextView programmatically
-
-Connect the UI to Code
-```swift
-@IBOutlet weak var textViewBox: TextView!
-```
-
-###### - Localize
-
-Define placeholder with `localizeKey`
-```swift
-textViewBox.localizeKey = "Placeholder".localized()
-```
-
-#### Using TextView in Storyboard
-
-The steps for use
-1. Drag a UITextView into Storyboard.
-2. Set class to `TextView`
-3. Set up attributes inspection.
-
-###### - Border
-
-<img src="Screenshot/Border_TextView.png" alt="" width="200"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-borderColor | UIColor  | The color of the layer’s border.  | UIColor.clear 
-borderWidth | CGFloat  | The width of the layer’s border.  | 0 
-
-###### - Corner Radius
-
-<img src="Screenshot/CornerRadius_TextView.png" alt="" width="200"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-cornerRadius | CGFloat  | The radius to use when drawing rounded corners for the layer’s background.  | 0 
-
-###### - Maximum length
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-maxLength | Int | The maximum character length. (0 means no limit) | 0 
-
-###### - Trim
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-trimWhiteSpaceWhenEndEditing | Bool | Trim whitespace and newline characters when end editing. | true 
-
-###### - Height
-
-<img src="Screenshot/Height_TextView.gif" alt="" width="250"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-minHeight | CGFloat | The minimum height limit. (0 means no limit) | 0 
-maxHeight | CGFloat | The maximum height limit. (0 means no limit) | 0 
-
-###### - Padding
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-paddingLeftCustom | CGFloat  | Pads the view along left edges by the specified amount. | 8 
-paddingRightCustom | CGFloat  | Pads the view along right edges by the specified amount. | 8 
-paddingTopCustom | CGFloat  | Pads the view along top edges by the specified amount. | 8 
-paddingBottomCustom | CGFloat  | Pads the view along bottom edges by the specified amount. | 8 
-
-### - ImageView
-
-#### Using ImageView programmatically
-
-Connect the UI to Code
-```swift
-@IBOutlet weak var imageView: ImageView!
-```
-
-#### Using ImageView in Storyboard
-
-The steps for use
-1. Drag a UIImageView into Storyboard.
-2. Set class to `ImageView`
-3. Set up attributes inspection.
-
-###### - Border
-
-<img src="Screenshot/Border_ImagetView.png" alt="" width="250"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-borderColor | UIColor  | The color of the layer’s border.  | UIColor.clear 
-borderWidth | CGFloat  | The width of the layer’s border.  | 0 
-
-###### - Corner Radius
-
-<img src="Screenshot/CornerRadius_ImagetView.png" alt="" width="250"/> <img src="Screenshot/CornerRadiusFull_ImagetView.png" alt="" width="250"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-cornerRadius | CGFloat  | The radius to use when drawing rounded corners for the layer’s background.  | 0 
-
-### - View
-
-#### Using View programmatically
-
-Connect the UI to Code
-```swift
-@IBOutlet weak var view: View!
-```
-
-#### Using View in Storyboard
-
-The steps for use
-1. Drag a UIView into Storyboard.
-2. Set class to `View`
-3. Set up attributes inspection.
-
-###### - Border
-
-<img src="Screenshot/Border_View.png" alt="" width="250"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-borderColor | UIColor  | The color of the layer’s border.  | UIColor.clear 
-borderWidth | CGFloat  | The width of the layer’s border.  | 0 
-
-###### - Corner Radius
-
-<img src="Screenshot/CornerRadius_View.png" alt="" width="250"/> <img src="Screenshot/CornerRadiusFull_View.png" alt="" width="250"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-cornerRadius | CGFloat  | The radius to use when drawing rounded corners for the layer’s background.  | 0 
-
-###### - Shadow
-
-<img src="Screenshot/Shadow_View.png" alt="" width="200"/> <img src="Screenshot/Shadow2_View.png" alt="" width="200"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-shadowColor | UIColor  | The color of the layer’s shadow. | UIColor.clear 
-shadowOpacity | Float  | The opacity of the layer’s shadow. | 0 
-shadowOffset | CGSize  | The offset (in points) of the layer’s shadow. | CGSize.zero 
-shadowRadius | CGFloat  | The blur radius (in points) used to render the layer’s shadow. | 0 
-
-###### - Gradient Background
-
-<img src="Screenshot/GradientBackground_View.png" alt="" width="200"/> <img src="Screenshot/GradientBackground2_View.png" alt="" width="200"/>
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-gradientEnabled | Bool  | Enable gradient background.  | false 
-gradientStartColor | UIColor  | Start color gradient background.  | UIColor.clear 
-gradientEndColor | UIColor  | End color gradient background.  | UIColor.clear 
-gradientHorizontal | Bool  | Is the horizontal gradient background.  | false 
-
-### - TableView
-
-#### Using TableView programmatically
-
-Connect the UI to Code
-```swift
-@IBOutlet weak var dataTableView: TableView!
-```
-
-###### - Image Size
-
-Custom Size Image
-```swift
-dataTableView.imageSizePercentage = .percentage75
-```
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-imageSizePercentage | [Percentage](Source/Enum/Percentage.swift) | The image size, in percentage of the TableView size. | percentage75 
-
-###### - Color & Font
-
-Custom Color & Font
-```swift
-dataTableView.titleColor = UIColor.black
-dataTableView.titleFont = UIFont(name: "HelveticaNeue-Bold", size: 18)
-dataTableView.messageColor = UIColor.lightGray
-dataTableView.messageFont = UIFont(name: "HelveticaNeue-Regular", size: 17)
-```
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-titleColor | UIColor | The color of title. | UIColor.black 
-titleFont | UIFont | The font of title. | UIFont(name: "HelveticaNeue-Bold", size: 18) 
-messageColor | UIColor | The color of message. | UIColor.lightGray 
-messageFont | UIFont | The font of message. | UIFont(name: "HelveticaNeue-Regular", size: 17) 
-
-###### - Empty View
-
-Example of use in `numberOfRowsInSection`
-```swift
-func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    if names.count == 0 {
-        dataTableView.setEmptyView(title: "Oops!", message: "Data not found.", messageImage: #imageLiteral(resourceName: "data_not_found_icon"), animated: true)
-    } else {
-        dataTableView.restore()
-    }
+PHP IF ELSE FUNCTION SEARCH SELECT :
+```PHP
+<?php
+if($_GET['type_search']){
     
-    return names.count
-}
-```
-
-- Function `setEmptyView` for show image only.
-
-Example of use
-```swift
-dataTableView.setEmptyView(messageImage: #imageLiteral(resourceName: "no_data_icon"), animated: true)
-```
-  
-Output
-
-<img src="Screenshot/Data_Not_Found_Img_TableView.gif" alt="" width="318"/>
-
-- Function `setEmptyView` for show title only.
-
-Example of use
-```swift
-dataTableView.setEmptyView(title: "Data not found.")
-```
-  
-Output
-
-<img src="Screenshot/Data_Not_Found_Title_TableView.png" alt="" width="318"/>
-
-- Function `setEmptyView` for show title and message.
-
-Example of use
-```swift
-dataTableView.setEmptyView(title: "Oops!", message: "Data not found.")
-```
-  
-Output
-
-<img src="Screenshot/Data_Not_Found_Title_Message_TableView.png" alt="" width="318"/>
-
-- Function `setEmptyView` for show image and title and message.
-
-Example of use
-```swift
-dataTableView.setEmptyView(title: "Oops!", message: "Data not found.", messageImage: #imageLiteral(resourceName: "data_not_found_icon"), animated: true)
-```
-  
-Output
-
-<img src="Screenshot/Data_Not_Found_Img_Title_Message_TableView.gif" alt="" width="318"/>
-
-###### - Restore
-
-The restore TableView
-
-Example of use
-```swift
-dataTableView.restore()
-```
-
-#### Using TableView in Storyboard
-
-The steps for use
-1. Drag a UITableView into Storyboard.
-2. Set class to `TableView`
-3. Set up attributes inspection.
-
-###### - Border
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-borderColor | UIColor  | The color of the layer’s border.  | UIColor.clear 
-borderWidth | CGFloat  | The width of the layer’s border.  | 0 
-
-### - CollectionView
-
-#### Using CollectionView programmatically
-
-Connect the UI to Code
-```swift
-@IBOutlet weak var dataCollectionView: CollectionView!
-```
-
-###### - Image Size
-
-Custom Size Image
-```swift
-dataCollectionView.imageSizePercentage = .percentage75
-```
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-imageSizePercentage | [Percentage](Source/Enum/Percentage.swift) | The image size, in percentage of the CollectionView size. | percentage75 
-
-###### - Color & Font
-
-Custom Color & Font
-```swift
-dataCollectionView.titleColor = UIColor.black
-dataCollectionView.titleFont = UIFont(name: "HelveticaNeue-Bold", size: 18)
-dataCollectionView.messageColor = UIColor.lightGray
-dataCollectionView.messageFont = UIFont(name: "HelveticaNeue-Regular", size: 17)
-```
-
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-titleColor | UIColor | The color of title. | UIColor.black 
-titleFont | UIFont | The font of title. | UIFont(name: "HelveticaNeue-Bold", size: 18) 
-messageColor | UIColor | The color of message. | UIColor.lightGray 
-messageFont | UIFont | The font of message. | UIFont(name: "HelveticaNeue-Regular", size: 17) 
-
-###### - Empty View
-
-Example of use in `numberOfItemsInSection`
-```swift
-func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    if names.count == 0 {
-        dataCollectionView.setEmptyView(title: "Oops!", message: "Data not found.", messageImage: #imageLiteral(resourceName: "data_not_found_icon"), animated: true)
-    } else {
-        dataCollectionView.restore()
+    if($_GET['type_search'] == 'Linear'){
+        Linear_search($_POST['search_list_number'], $_POST['search_number']);
     }
-    
-    return names.count
+
+    if($_GET['type_search'] == 'Binary'){
+        Binary_search($_POST['search_list_number'], $_POST['search_number']);
+    }
+
+    if($_GET['type_search'] == 'Bubble'){
+        Bubble_sort($_POST['search_list_number']);
+    }
 }
+?>
 ```
 
-- Function `setEmptyView` for show image only.
-
-Example of use
-```swift
-dataCollectionView.setEmptyView(messageImage: #imageLiteral(resourceName: "no_data_icon"), animated: true)
+PHP Function Linear Search :
+```PHP
+<?php
+function Linear_search($search_list_number, $search_number){
+    $output = [];
+    $output['error'] = '0';
+    $output['msg'] = 'OK.';
+    $output['result'] = 'Result !!!!<br>';
+    $round = 1;
+    
+    $arry_search_list_number = explode(",", $search_list_number);
+    foreach($arry_search_list_number AS $keys => $value){
+        if($value != ''){
+            if($value != $search_number){
+                $output['result'] .= 'Round : '.$round.  ' ===> '. $value .' != '. $search_number.'<br>';
+            }else if($value == $search_number){
+                $output['result'] .= 'Round : '.$round.  ' ===> '. $value .' = '. $search_number.' found!!';
+                break;
+            }
+            $round++;
+        } 
+    }
+    echo json_encode($output);
+}
+?>
 ```
+
+PHP Function Binary Search :
+```PHP
+<?php
+function Binary_search($search_list_number, $search_number){
+    $output = [];
+    $output['error'] = '0';
+    $output['msg'] = 'OK.';
+    $output['result'] = 'Result !!!!<br>';
+
+    $arry_search_list_number = explode(",", $search_list_number);
+    sort($arry_search_list_number, SORT_NUMERIC); 
+
+    $output['result'] .= 'Sort : [ '.implode(",",$arry_search_list_number).' ] <br>';
   
-Output
+    $low = 0; 
+    $high = count($arry_search_list_number) - 1; 
+    $round = 1;
 
-<img src="Screenshot/Data_Not_Found_Img_TableView.gif" alt="" width="318"/>
+    while ($low <= $high) { 
+            $mid = floor(($low + $high) / 2); 
+            if($search_number != $arry_search_list_number[$mid]){
+                $output['result'] .= 'Round : '.$round.' ===> '.' low = '.$low.', high = '.$high.', Mid = '.$mid.  ' ===> '. $arry_search_list_number[$mid] .' != '. $search_number.'<br>';
+                if($search_number < $arry_search_list_number[$mid]){
+                    $high = $mid -1; 
+                }else if($search_number > $arry_search_list_number[$mid]){
+                    $low = $mid + 1; 
+                }
+            }else if($search_number == $arry_search_list_number[$mid] ){
+                $output['result'] .= 'Round : '.$round.' ===> '.', low = '.$low.', high = '.$high.' Mid = '.$mid.  ' ===> '. $arry_search_list_number[$mid] .' = '. $search_number.' found!!';
+                break;
+            }
+            $round++;  
+    }
+    echo json_encode($output);  
+}
 
-- Function `setEmptyView` for show title only.
-
-Example of use
-```swift
-dataCollectionView.setEmptyView(title: "Data not found.")
-```
-  
-Output
-
-<img src="Screenshot/Data_Not_Found_Title_TableView.png" alt="" width="318"/>
-
-- Function `setEmptyView` for show title and message.
-
-Example of use
-```swift
-dataCollectionView.setEmptyView(title: "Oops!", message: "Data not found.")
-```
-  
-Output
-
-<img src="Screenshot/Data_Not_Found_Title_Message_TableView.png" alt="" width="318"/>
-
-- Function `setEmptyView` for show image and title and message.
-
-Example of use
-```swift
-dataCollectionView.setEmptyView(title: "Oops!", message: "Data not found.", messageImage: #imageLiteral(resourceName: "data_not_found_icon"), animated: true)
-```
-  
-Output
-
-<img src="Screenshot/Data_Not_Found_Img_Title_Message_TableView.gif" alt="" width="318"/>
-
-###### - Restore
-
-The restore CollectionView
-
-Example of use
-```swift
-dataCollectionView.restore()
+?>
 ```
 
-#### Using CollectionView in Storyboard
+PHP Function Bubble Sort :
+```PHP
+<?php
+function Bubble_sort($search_list_number){
+    $output = [];
+    $output['error'] = '0';
+    $output['msg'] = 'OK.';
+    $output['result'] = 'Result !!!!<br>';
 
-The steps for use
-1. Drag a UICollectionView into Storyboard.
-2. Set class to `CollectionView`
-3. Set up attributes inspection.
+    $arry_search_list_number = explode(",", $search_list_number); 
+    $round = 1;
+    $count_arry_search_list_number = count($arry_search_list_number)-1;
 
-###### - Border
+    
+    for ($i=0; $i<$count_arry_search_list_number; $i++) {
+        for ($j=0; $j<$count_arry_search_list_number-$i; $j++) {
+            $k = $j+1;
+            if ($arry_search_list_number[$k] < $arry_search_list_number[$j]) {
+                $output['result'] .=  'Round : '.$round.' ===> '.$arry_search_list_number[$j]. ' check '. $arry_search_list_number[$k].  ' ===> ';
+                list($arry_search_list_number[$j], $arry_search_list_number[$k]) = array($arry_search_list_number[$k], $arry_search_list_number[$j]);
+                $output['result'] .=  implode(', ',$arry_search_list_number).'<br>';
+            }else{
+                $output['result'] .=  'Round : '.$round.' ===> '.$arry_search_list_number[$j]. ' check '. $arry_search_list_number[$k].  ' ===> '. implode(', ',$arry_search_list_number).'<br>';
+            }
+            $round++;
+        }
+    }
+    echo json_encode($output);  
+}
 
-Parameter | Type | Description | Default 
------------- | ------------- | ------------- | ------------- 
-borderColor | UIColor  | The color of the layer’s border. | UIColor.clear 
-borderWidth | CGFloat  | The width of the layer’s border. | 0 
-
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Author
-
-nattaponph, nattapon.phothima@gmail.com
-
-## License
-
-ADVHelper is available under the MIT license. See the LICENSE file for more info.
-
-## Credits
-
-* [Kenneth Tsang](https://cocoapods.org/pods/GrowingTextView)
-* [Roy Marmelstein](https://cocoapods.org/pods/Localize-Swift)
-* [Taha Sönmez](https://medium.com/@mtssonmez/handle-empty-tableview-in-swift-4-ios-11-23635d108409)
+?>
+```
