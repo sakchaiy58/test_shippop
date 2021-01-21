@@ -1,7 +1,7 @@
 [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](http://mit-license.org)
 
 # programmer_test1
-Download FILE : [index](Programmer_test1/index.php) AND  [function](Programmer_test1/function.php)
+## Download file : [index](Programmer_test1/index.php) AND  [function](Programmer_test1/function.php)
 
 
 
