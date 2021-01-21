@@ -1,7 +1,7 @@
 [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](http://mit-license.org)
 
 # programmer_test1
-FILE : [index](https://github.com/sakchaiy58/test_shippop/blob/main/Programmer_test1/index.php)
+Download FILE : [index](Programmer_test1/index.php) AND  [function](Programmer_test1/function.php)
 
 
 
