@@ -1,7 +1,7 @@
 [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](http://mit-license.org)
 
 # programmer_test1
-โหลดตัวช่ายต่างๆ :
+Download external css and external js :
 ```html
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -35,7 +35,7 @@
   }
 ```
 
-### html in body :
+### HTML in body :
 ```html
 <div class="container-fluid">
     <div class="row">
@@ -151,6 +151,7 @@ function search(){
                      if(data.error = "0"){
                          $('#show_result').html(data.result);
                      }else{
+                          $('#show_result').html('เกิดข้อผิดพลาดกรุณาลองใหม่');
                      }
                  }
         });
